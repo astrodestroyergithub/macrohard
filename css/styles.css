@@ -1,0 +1,255 @@
+/* Macrohard Fluent Design System & Responsive Stylesheet */
+/* Engineered by Tamojit Roy */
+
+:root {
+  --mh-blue: #0067b8;
+  --mh-blue-hover: #005da6;
+  --mh-blue-dark: #004c87;
+  --mh-text: #1b1b1b;
+  --mh-text-secondary: #505050;
+  --mh-bg: #ffffff;
+  --mh-surface: #f2f2f2;
+  --mh-card-bg: #ffffff;
+  --mh-border: #e5e5e5;
+  --mh-footer-bg: #f2f2f2;
+  --mh-red: #f25022;
+  --mh-green: #7fba00;
+  --mh-cyan: #00a4ef;
+  --mh-yellow: #ffb900;
+}
+
+html.dark {
+  --mh-blue: #4cc2ff;
+  --mh-blue-hover: #28b1f8;
+  --mh-blue-dark: #0078d4;
+  --mh-text: #f5f5f5;
+  --mh-text-secondary: #c8c8c8;
+  --mh-bg: #111111;
+  --mh-surface: #1b1b1b;
+  --mh-card-bg: #1f1f1f;
+  --mh-border: #333333;
+  --mh-footer-bg: #181818;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Inter', Roboto, Oxygen, Ubuntu, sans-serif;
+  color: var(--mh-text);
+  background-color: var(--mh-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  overflow-x: hidden;
+  min-height: 100vh;
+  background-color: var(--mh-bg);
+  color: var(--mh-text);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Authentic Microsoft Nav Link Underline Effect */
+.mh-nav-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 2px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.mh-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 2px;
+  right: 2px;
+  height: 2px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.18s ease;
+}
+
+.mh-nav-link:hover::after,
+.mh-nav-link:focus-visible::after,
+.mh-nav-link.active::after {
+  transform: scaleX(1);
+}
+
+/* Signature Microsoft Action Link with Animated Chevron */
+.mh-cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--mh-blue);
+  text-decoration: none;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+  transition: color 0.15s ease;
+}
+
+.mh-cta-link span.mh-link-text {
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.15s ease;
+}
+
+.mh-cta-link:hover span.mh-link-text {
+  border-bottom-color: var(--mh-blue-hover);
+}
+
+.mh-cta-link svg.mh-chevron {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mh-cta-link:hover svg.mh-chevron {
+  transform: translateX(4px);
+}
+
+/* Primary Microsoft Button */
+.mh-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #0067b8;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 10px 20px;
+  border-radius: 2px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.mh-btn-primary:hover {
+  background-color: #005da6;
+  box-shadow: 0 4px 12px rgba(0, 103, 184, 0.22);
+}
+
+.mh-btn-primary:active {
+  transform: scale(0.98);
+}
+
+.mh-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: transparent;
+  color: var(--mh-text);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 10px 20px;
+  border-radius: 2px;
+  border: 1px solid currentColor;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  white-space: nowrap;
+}
+
+.mh-btn-secondary:hover {
+  background-color: rgba(128, 128, 128, 0.1);
+}
+
+/* Fluent Card Shadow & Hover */
+.mh-card {
+  background-color: var(--mh-card-bg);
+  border: 1px solid var(--mh-border);
+  border-radius: 4px;
+  box-shadow: 0 1.6px 3.6px 0 rgba(0,0,0,0.08), 0 0.3px 0.9px 0 rgba(0,0,0,0.06);
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.mh-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6.4px 14.4px 0 rgba(0,0,0,0.13), 0 1.2px 3.6px 0 rgba(0,0,0,0.10);
+}
+
+/* Container matching Microsoft's 1600px max-width with 5% fluid gutter */
+.mh-container {
+  width: 100%;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(16px, 5vw, 80px);
+  padding-right: clamp(16px, 5vw, 80px);
+}
+
+/* Hero Carousel Responsive Layout */
+.mh-hero-slide {
+  display: none;
+  animation: fadeIn 0.4s ease;
+}
+
+.mh-hero-slide.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--mh-surface);
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Responsive Breakpoints to Guarantee Zero UI Breakage across 320px - 4K */
+@media (max-width: 1083px) {
+  .mh-hero-overlay-card {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    max-width: 100% !important;
+    margin-top: -24px;
+    z-index: 10;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  }
+}
+
+@media (max-width: 540px) {
+  .mh-hero-overlay-card {
+    margin-top: 0;
+    border-radius: 0;
+    box-shadow: none;
+    border-bottom: 1px solid var(--mh-border);
+  }
+  .mh-btn-primary, .mh-btn-secondary {
+    width: 100%;
+  }
+}

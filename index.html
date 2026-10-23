@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Macrohard – Cloud, Computers, Apps &amp; Gaming | Developed by Tamojit Roy</title>
+  <meta name="description" content="Explore Macrohard products and services for your home or business. Shop Surface, Macrohard 365, Xbox, Windows, Azure, and Copilot AI. Developed by Tamojit Roy." />
+  <meta name="author" content="Tamojit Roy" />
+  <meta name="theme-color" content="#0067b8" />
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+  <link rel="alternate icon" type="image/png" href="./assets/favicon.png" />
+  <link rel="shortcut icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij4KICA8cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHJ4PSI4IiBmaWxsPSIjZmZmZmZmIi8+CiAgPHJlY3QgeD0iNiIgeT0iNiIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiBmaWxsPSIjRjI1MDIyIi8+CiAgPHJlY3QgeD0iMzQiIHk9IjYiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0iIzdGQkEwMCIvPgogIDxyZWN0IHg9IjYiIHk9IjM0IiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiMwMEE0RUYiLz4KICA8cmVjdCB4PSIzNCIgeT0iMzQiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0iI0ZGQjkwMCIvPgo8L3N2Zz4=" />
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            mhblue: '#0067b8',
+            mhbluehover: '#005da6'
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body class="bg-white dark:bg-[#111111] text-[#1b1b1b] dark:text-[#f5f5f5] antialiased selection:bg-[#0067b8] selection:text-white">
+
+  <!-- Hidden Asset Registry so Dynamic Cards & Modals Resolve Base64 or Local Images Cleanly -->
+  <div class="hidden" aria-hidden="true">
+    <img id="mh-asset-hero-laptop" src="./assets/hero-laptop.jpg" alt="" />
+    <img id="mh-asset-xbox-console" src="./assets/xbox-console.jpg" alt="" />
+    <img id="mh-asset-surface-pro" src="./assets/surface-pro.jpg" alt="" />
+    <img id="mh-asset-workspace-cloud" src="./assets/workspace-cloud.jpg" alt="" />
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="fixed bottom-5 right-5 z-[100] flex flex-col gap-2 max-w-sm w-full pointer-events-auto" aria-live="polite"></div>
+
+  <!-- Top Universal Microsoft/Macrohard Header Navigation -->
+  <header class="sticky top-0 z-50 bg-white/95 dark:bg-[#111111]/95 backdrop-blur border-b border-neutral-200 dark:border-neutral-800">
+    <div class="mh-container h-[54px] flex items-center justify-between gap-2">
+      
+      <!-- Left: Hamburger (Mobile) + Brand Logo + Primary Links -->
+      <div class="flex items-center gap-3 lg:gap-5 min-w-0">
+        <button type="button" id="mobile-menu-btn" class="lg:hidden p-2 -ml-2 rounded hover:bg-neutral-100 dark:hover:bg-neutral-800" aria-label="Toggle navigation menu">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+
+        <!-- Macrohard Official 4-Square Logo -->
+        <a href="#top" class="flex items-center gap-2.5 shrink-0 py-1 focus:outline-none" aria-label="Macrohard Home">
+          <svg class="w-[21px] h-[21px] shrink-0" viewBox="0 0 21 21" aria-hidden="true">
+            <rect x="0" y="0" width="10" height="10" fill="#F25022"/>
+            <rect x="11" y="0" width="10" height="10" fill="#7FBA00"/>
+            <rect x="0" y="11" width="10" height="10" fill="#00A4EF"/>
+            <rect x="11" y="11" width="10" height="10" fill="#FFB900"/>
+          </svg>
+          <span class="font-semibold text-[19px] tracking-tight text-[#262626] dark:text-white">Macrohard</span>
+        </a>
+
+        <span class="hidden xl:inline-block h-5 w-[1px] bg-neutral-300 dark:bg-neutral-700 mx-1"></span>
+
+        <!-- Desktop Primary Links -->
+        <nav class="hidden lg:flex items-center gap-4 xl:gap-5" aria-label="Primary Navigation">
+          <a href="#m365-section" class="mh-nav-link">Macrohard 365</a>
+          <a href="#copilot-section" class="mh-nav-link">Teams</a>
+          <a href="#copilot-section" class="mh-nav-link font-semibold text-[#0067b8] dark:text-[#4cc2ff]">Copilot</a>
+          <a href="#storefront-section" class="mh-nav-link">Windows</a>
+          <a href="#storefront-section" class="mh-nav-link">Surface</a>
+          <a href="#xbox-banner-section" class="mh-nav-link">Xbox</a>
+          <a href="#storefront-section" class="mh-nav-link">Deals</a>
+          <a href="#business-section" class="mh-nav-link hidden xl:inline-flex">Small Business</a>
+          <a href="#compare-section" class="mh-nav-link hidden 2xl:inline-flex">Support</a>
+        </nav>
+      </div>
+
+      <!-- Right: All Macrohard Mega-Menu, Search, Theme, Cart, Sign-In -->
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+        <!-- All Macrohard Dropdown Button -->
+        <div class="relative">
+          <button type="button" id="all-macrohard-btn" aria-expanded="false" class="hidden md:inline-flex items-center gap-1 text-[13px] px-2 py-1.5 rounded hover:bg-neutral-100 dark:hover:bg-neutral-800">
+            <span>All Macrohard</span>
+            <svg class="w-3.5 h-3.5 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+
+          <!-- Mega Menu Panel -->
+          <div id="all-macrohard-menu" class="hidden fixed md:absolute right-2 md:right-0 top-[54px] md:top-full mt-0.5 w-[95vw] max-w-4xl bg-[#f2f2f2] dark:bg-[#1f1f1f] border border-neutral-300 dark:border-neutral-700 shadow-2xl rounded-b z-50">
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 p-6 text-xs">
+              <div>
+                <h4 class="font-bold text-neutral-900 dark:text-white mb-3 uppercase tracking-wider">Software</h4>
+                <ul class="space-y-2.5 text-neutral-600 dark:text-neutral-300">
+                  <li><a href="#storefront-section" class="hover:underline">Windows Apps</a></li>
+                  <li><a href="#copilot-section" class="hover:underline">Macrohard Copilot</a></li>
+                  <li><a href="#m365-section" class="hover:underline">OneDrive Cloud</a></li>
+                  <li><a href="#m365-section" class="hover:underline">Outlook</a></li>
+                  <li><a href="#copilot-section" class="hover:underline">Macrohard Teams</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-bold text-neutral-900 dark:text-white mb-3 uppercase tracking-wider">PCs &amp; Devices</h4>
+                <ul class="space-y-2.5 text-neutral-600 dark:text-neutral-300">
+                  <li><a href="#storefront-section" class="hover:underline">Surface Pro 11</a></li>
+                  <li><a href="#storefront-section" class="hover:underline">Surface Laptop 7</a></li>
+                  <li><a href="#storefront-section" class="hover:underline">Surface Studio 3+</a></li>
+                  <li><a href="#xbox-banner-section" class="hover:underline">Xbox Accessories</a></li>
+                  <li><a href="#compare-section" class="hover:underline">Compare Devices</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-bold text-neutral-900 dark:text-white mb-3 uppercase tracking-wider">Entertainment</h4>
+                <ul class="space-y-2.5 text-neutral-600 dark:text-neutral-300">
+                  <li><a href="#xbox-banner-section" class="hover:underline">Xbox Game Pass</a></li>
+                  <li><a href="#xbox-banner-section" class="hover:underline">Xbox Series X|S</a></li>
+                  <li><a href="#storefront-section" class="hover:underline">PC Gaming</a></li>
+                  <li><a href="#xbox-banner-section" class="hover:underline">Cloud Gaming</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-bold text-neutral-900 dark:text-white mb-3 uppercase tracking-wider">Business</h4>
+                <ul class="space-y-2.5 text-neutral-600 dark:text-neutral-300">
+                  <li><a href="#business-section" class="hover:underline">Macrohard Cloud</a></li>
+                  <li><a href="#business-section" class="hover:underline">Macrohard Security</a></li>
+                  <li><a href="#business-section" class="hover:underline">Azure AI Foundry</a></li>
+                  <li><a href="#business-section" class="hover:underline">Windows 365</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-bold text-neutral-900 dark:text-white mb-3 uppercase tracking-wider">Developer &amp; IT</h4>
+                <ul class="space-y-2.5 text-neutral-600 dark:text-neutral-300">
+                  <li><a href="#copilot-section" class="hover:underline">Visual Studio</a></li>
+                  <li><a href="#business-section" class="hover:underline">GitHub Copilot</a></li>
+                  <li><a href="#business-section" class="hover:underline">Netlify Edge Stack</a></li>
+                  <li><a href="#copilot-section" class="hover:underline">Power Platform</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-bold text-neutral-900 dark:text-white mb-3 uppercase tracking-wider">Creator</h4>
+                <ul class="space-y-2.5 text-neutral-600 dark:text-neutral-300">
+                  <li><span class="font-semibold text-[#0067b8] dark:text-[#4cc2ff]">Tamojit Roy</span></li>
+                  <li><a href="#footer-section" class="hover:underline">System Architecture</a></li>
+                  <li><a href="#footer-section" class="hover:underline">Responsive UI Grid</a></li>
+                  <li><a href="#footer-section" class="hover:underline">Promo: TAMOJIT20</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="bg-[#e6e6e6] dark:bg-neutral-900 py-2.5 px-6 text-center border-t border-neutral-300 dark:border-neutral-700">
+              <a href="#footer-section" class="text-xs font-semibold uppercase tracking-widest hover:underline">View Full Macrohard Sitemap &gt;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Inline Quick Search Input (Desktop) + Search Button -->
+        <div class="hidden sm:flex items-center bg-neutral-100 dark:bg-neutral-800 rounded-sm px-2.5 py-1 border border-transparent focus-within:border-[#0067b8]">
+          <input id="global-search-input" type="search" placeholder="Search Macrohard.com" aria-label="Search Macrohard products" class="bg-transparent text-xs w-32 md:w-44 focus:outline-none" />
+          <button type="button" id="header-search-toggle" aria-label="Focus search" class="text-neutral-500 hover:text-neutral-800 dark:hover:text-white">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          </button>
+        </div>
+
+        <!-- Dark Mode Toggle -->
+        <button type="button" id="theme-toggle-btn" class="p-1.5 rounded hover:bg-neutral-100 dark:hover:bg-neutral-800 text-xs flex items-center gap-1" title="Toggle Light/Dark Fluent Theme" aria-label="Toggle dark mode">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+        </button>
+
+        <!-- Cart Button -->
+        <button type="button" id="header-cart-btn" class="relative inline-flex items-center gap-1.5 text-[13px] px-2 py-1.5 rounded hover:bg-neutral-100 dark:hover:bg-neutral-800" aria-label="Open shopping cart">
+          <span class="hidden xl:inline">Cart</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m12-9l2 9m-6-4a1 1 0 11-2 0 1 1 0 012 0z"/></svg>
+          <span id="cart-count-badge" class="bg-[#0067b8] text-white text-[10px] font-bold px-1.5 py-0.2 rounded-full">1</span>
+        </button>
+
+        <!-- Sign In / User Profile Button -->
+        <button type="button" id="header-signin-btn" class="inline-flex items-center gap-2 text-[13px] pl-1 pr-2 py-1 rounded hover:bg-neutral-100 dark:hover:bg-neutral-800" aria-label="Sign in to your account">
+          <span id="signin-user-label" class="hidden sm:inline">Sign in</span>
+          <span class="w-7 h-7 rounded-full border border-neutral-400 dark:border-neutral-600 flex items-center justify-center">
+            <svg class="w-4 h-4 text-neutral-600 dark:text-neutral-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Responsive Drawer -->
+    <div id="mobile-nav-drawer" class="hidden lg:hidden bg-[#f2f2f2] dark:bg-[#1b1b1b] border-t border-neutral-200 dark:border-neutral-800 px-5 py-4 space-y-3 text-sm">
+      <div class="flex flex-col space-y-2.5 font-medium">
+        <a href="#m365-section" class="py-1 border-b border-neutral-200 dark:border-neutral-700">Macrohard 365</a>
+        <a href="#copilot-section" class="py-1 border-b border-neutral-200 dark:border-neutral-700">Teams &amp; Copilot AI</a>
+        <a href="#storefront-section" class="py-1 border-b border-neutral-200 dark:border-neutral-700">Surface &amp; Windows 11</a>
+        <a href="#xbox-banner-section" class="py-1 border-b border-neutral-200 dark:border-neutral-700">Xbox &amp; Game Pass</a>
+        <a href="#business-section" class="py-1 border-b border-neutral-200 dark:border-neutral-700">Macrohard for Business</a>
+        <a href="#compare-section" class="py-1">Compare Specs &amp; Support</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Promotional Announcement Ribbon -->
+  <div id="top-promo-ribbon" class="bg-[#0067b8] text-white text-xs sm:text-sm py-2.5 px-4">
+    <div class="mh-container flex items-center justify-between gap-3">
+      <p class="font-medium text-center flex-1">
+        <span class="font-bold bg-[#ffb900] text-black px-2 py-0.5 rounded-sm mr-2 text-xs">LIMITED OFFER</span>
+        Save up to $300 on select Surface Copilot+ PCs and use code <strong class="underline">TAMOJIT20</strong> at checkout for an extra 20% developer discount.
+        <a href="#storefront-section" class="underline font-semibold ml-1.5 hover:text-neutral-100">Shop deals &gt;</a>
+      </p>
+      <button type="button" id="dismiss-promo-ribbon" class="text-white/80 hover:text-white font-bold px-1.5 text-base leading-none" aria-label="Close announcement banner">&times;</button>
+    </div>
+  </div>
+
+  <!-- Main Content Landmark -->
+  <main id="top">
+
+    <!-- HERO CAROUSEL SECTION (Exact Microsoft.com Split/Overlay Architecture) -->
+    <section aria-label="Featured Highlights" class="relative max-w-[1600px] mx-auto">
+      
+      <!-- Slide 1: Surface Laptop & Copilot+ PC -->
+      <div class="mh-hero-slide active">
+        <div class="relative bg-[#f2f2f2] dark:bg-[#1b1b1b] overflow-hidden">
+          <div class="grid grid-cols-1 lg:grid-cols-12 items-center">
+            <div class="lg:col-span-5 p-6 sm:p-10 lg:p-14 xl:p-16 order-2 lg:order-1">
+              <span class="inline-block bg-[#ffb900] text-black text-xs font-bold px-2.5 py-1 rounded-sm mb-3">
+                Copilot+ PC
+              </span>
+              <h1 class="text-2xl sm:text-4xl xl:text-[40px] font-semibold leading-[1.18] tracking-tight mb-4">
+                Meet the new Surface Laptop &amp; Surface Pro
+              </h1>
+              <p class="text-sm sm:text-base text-[#505050] dark:text-neutral-300 leading-relaxed mb-6">
+                Unlock AI-accelerated speed, Recall, Cocreator, and all-day battery life with the most intelligent Windows PCs ever engineered.
+              </p>
+              <div class="flex flex-wrap items-center gap-4">
+                <button type="button" class="mh-btn-primary hero-shop-btn" data-product-id="surface-laptop-7">
+                  Explore Surface Laptop
+                </button>
+                <a href="#storefront-section" class="mh-cta-link">
+                  <span class="mh-link-text">Shop all Surface Copilot+ PCs</span>
+                  <svg class="mh-chevron w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+            <div class="lg:col-span-7 order-1 lg:order-2">
+              <img src="./assets/hero-laptop.jpg" alt="Macrohard Surface Laptop Copilot+ PC on modern studio desk" class="w-full h-[260px] sm:h-[380px] lg:h-[500px] object-cover object-center" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2: Macrohard 365 + Copilot -->
+      <div class="mh-hero-slide">
+        <div class="relative bg-[#eef4fa] dark:bg-[#17212b] overflow-hidden">
+          <div class="grid grid-cols-1 lg:grid-cols-12 items-center">
+            <div class="lg:col-span-5 p-6 sm:p-10 lg:p-14 xl:p-16 order-2 lg:order-1">
+              <span class="inline-block bg-[#0067b8] text-white text-xs font-bold px-2.5 py-1 rounded-sm mb-3">
+                Everyday AI Companion
+              </span>
+              <h2 class="text-2xl sm:text-4xl xl:text-[40px] font-semibold leading-[1.18] tracking-tight mb-4">
+                Achieve the extraordinary with Macrohard 365
+              </h2>
+              <p class="text-sm sm:text-base text-[#505050] dark:text-neutral-300 leading-relaxed mb-6">
+                Get cloud storage, advanced security, and Macrohard Copilot built directly into Word, Excel, PowerPoint, and Outlook across all your devices.
+              </p>
+              <div class="flex flex-wrap items-center gap-4">
+                <a href="#m365-section" class="mh-btn-primary">
+                  Choose your Macrohard 365 plan
+                </a>
+                <a href="#copilot-section" class="mh-cta-link">
+                  <span class="mh-link-text">Try Interactive Copilot Demo</span>
+                  <svg class="mh-chevron w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+            <div class="lg:col-span-7 order-1 lg:order-2">
+              <img src="./assets/surface-pro.jpg" alt="Surface Pro 2-in-1 running Macrohard 365 apps" class="w-full h-[260px] sm:h-[380px] lg:h-[500px] object-cover object-center" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3: Xbox Series X -->
+      <div class="mh-hero-slide">
+        <div class="relative bg-[#111814] text-white overflow-hidden">
+          <div class="grid grid-cols-1 lg:grid-cols-12 items-center">
+            <div class="lg:col-span-5 p-6 sm:p-10 lg:p-14 xl:p-16 order-2 lg:order-1">
+              <span class="inline-block bg-[#107c10] text-white text-xs font-bold px-2.5 py-1 rounded-sm mb-3">
+                4K 120FPS Gaming
+              </span>
+              <h2 class="text-2xl sm:text-4xl xl:text-[40px] font-semibold leading-[1.18] tracking-tight mb-4">
+                Power your dreams with Xbox Series X
+              </h2>
+              <p class="text-sm sm:text-base text-neutral-300 leading-relaxed mb-6">
+                Experience next-gen speed and performance with 1 TB solid-state storage and instant access to hundreds of titles with Game Pass Ultimate.
+              </p>
+              <div class="flex flex-wrap items-center gap-4">
+                <button type="button" class="mh-btn-primary hero-shop-btn" data-product-id="xbox-series-x">
+                  Shop Xbox Series X
+                </button>
+                <a href="#xbox-banner-section" class="mh-cta-link !text-[#7fba00]">
+                  <span class="mh-link-text">Explore Game Pass Ultimate</span>
+                  <svg class="mh-chevron w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+            <div class="lg:col-span-7 order-1 lg:order-2">
+              <img src="./assets/xbox-console.jpg" alt="Xbox Series X console and wireless controller" class="w-full h-[260px] sm:h-[380px] lg:h-[500px] object-cover object-center" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Authentic Microsoft Carousel Control Strip (Play/Pause, Prev, Dots, Next) -->
+      <div class="flex items-center justify-center gap-5 py-4 bg-white dark:bg-[#111111] border-b border-neutral-200 dark:border-neutral-800">
+        <button type="button" id="hero-play-btn" class="p-1.5 rounded hover:bg-neutral-100 dark:hover:bg-neutral-800" aria-label="Pause or play carousel">
+          <svg id="hero-pause-icon" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/></svg>
+          <svg id="hero-play-icon" class="w-4 h-4 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          <span id="hero-play-label" class="sr-only">Pause slide rotation</span>
+        </button>
+
+        <button type="button" id="hero-prev-btn" class="p-1.5 rounded hover:bg-neutral-100 dark:hover:bg-neutral-800" aria-label="Previous slide">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+
+        <div class="flex items-center gap-3">
+          <button type="button" class="mh-hero-dot w-2.5 h-2.5 rounded-full border border-[#1b1b1b] dark:border-white bg-[#1b1b1b] dark:bg-white transition-all" data-slide="0" aria-label="Slide 1"></button>
+          <button type="button" class="mh-hero-dot w-2.5 h-2.5 rounded-full border border-[#1b1b1b] dark:border-white bg-transparent transition-all" data-slide="1" aria-label="Slide 2"></button>
+          <button type="button" class="mh-hero-dot w-2.5 h-2.5 rounded-full border border-[#1b1b1b] dark:border-white bg-transparent transition-all" data-slide="2" aria-label="Slide 3"></button>
+        </div>
+
+        <button type="button" id="hero-next-btn" class="p-1.5 rounded hover:bg-neutral-100 dark:hover:bg-neutral-800" aria-label="Next slide">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- QUICK-ACTION ICON STRIP (Authentic Microsoft 6-Icon Row) -->
+    <section aria-label="Quick category links" class="mh-container py-10">
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 text-center">
+        <a href="#m365-section" data-target="m365-section" class="quick-icon-link group flex flex-col items-center gap-2.5 p-2 rounded hover:bg-neutral-50 dark:hover:bg-neutral-900">
+          <div class="w-11 h-11 flex items-center justify-center rounded-full bg-[#0067b8]/10 text-[#0067b8] dark:text-[#4cc2ff]">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
+          </div>
+          <span class="text-sm font-semibold text-[#0067b8] dark:text-[#4cc2ff] group-hover:underline">Choose your Macrohard 365</span>
+        </a>
+
+        <a href="#storefront-section" data-filter="surface" data-target="storefront-section" class="quick-icon-link group flex flex-col items-center gap-2.5 p-2 rounded hover:bg-neutral-50 dark:hover:bg-neutral-900">
+          <div class="w-11 h-11 flex items-center justify-center rounded-full bg-[#0067b8]/10 text-[#0067b8] dark:text-[#4cc2ff]">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <span class="text-sm font-semibold text-[#0067b8] dark:text-[#4cc2ff] group-hover:underline">Shop Surface devices</span>
+        </a>
+
+        <a href="#storefront-section" data-filter="xbox" data-target="storefront-section" class="quick-icon-link group flex flex-col items-center gap-2.5 p-2 rounded hover:bg-neutral-50 dark:hover:bg-neutral-900">
+          <div class="w-11 h-11 flex items-center justify-center rounded-full bg-[#107c10]/10 text-[#107c10] dark:text-[#7fba00]">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <span class="text-sm font-semibold text-[#0067b8] dark:text-[#4cc2ff] group-hover:underline">Buy Xbox games and consoles</span>
+        </a>
+
+        <a href="#storefront-section" data-filter="software" data-target="storefront-section" class="quick-icon-link group flex flex-col items-center gap-2.5 p-2 rounded hover:bg-neutral-50 dark:hover:bg-neutral-900">
+          <div class="w-11 h-11 flex items-center justify-center rounded-full bg-[#0067b8]/10 text-[#0067b8] dark:text-[#4cc2ff]">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          </div>
+          <span class="text-sm font-semibold text-[#0067b8] dark:text-[#4cc2ff] group-hover:underline">Get Windows 11 Pro</span>
+        </a>
+
+        <a href="#copilot-section" data-target="copilot-section" class="quick-icon-link group flex flex-col items-center gap-2.5 p-2 rounded hover:bg-neutral-50 dark:hover:bg-neutral-900">
+          <div class="w-11 h-11 flex items-center justify-center rounded-full bg-purple-600/10 text-purple-600 dark:text-purple-400">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <span class="text-sm font-semibold text-[#0067b8] dark:text-[#4cc2ff] group-hover:underline">Explore Macrohard Copilot</span>
+        </a>
+
+        <a href="#business-section" data-target="business-section" class="quick-icon-link group flex flex-col items-center gap-2.5 p-2 rounded hover:bg-neutral-50 dark:hover:bg-neutral-900">
+          <div class="w-11 h-11 flex items-center justify-center rounded-full bg-[#0067b8]/10 text-[#0067b8] dark:text-[#4cc2ff]">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <span class="text-sm font-semibold text-[#0067b8] dark:text-[#4cc2ff] group-hover:underline">Shop Business solutions</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- CONSUMER PRODUCT CARDS STOREFRONT (Filterable 4-Column Responsive Grid) -->
+    <section id="storefront-section" class="mh-container py-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight">Featured Hardware, Gaming &amp; AI Software</h2>
+          <p class="text-sm text-[#505050] dark:text-neutral-400 mt-1">
+            Filter by product line, view full hardware specifications, or check "Compare" on up to 3 devices.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2">
+          <button type="button" class="category-tab-btn px-3.5 py-1.5 rounded-sm text-xs font-semibold bg-[#0067b8] text-white transition" data-category="all">
+            All Products
+          </button>
+          <button type="button" class="category-tab-btn px-3.5 py-1.5 rounded-sm text-xs font-semibold bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 transition" data-category="surface">
+            Surface PCs
+          </button>
+          <button type="button" class="category-tab-btn px-3.5 py-1.5 rounded-sm text-xs font-semibold bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 transition" data-category="xbox">
+            Xbox &amp; Gaming
+          </button>
+          <button type="button" class="category-tab-btn px-3.5 py-1.5 rounded-sm text-xs font-semibold bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 transition" data-category="software">
+            Macrohard 365 &amp; OS
+          </button>
+          <span id="product-count-badge" class="text-xs text-neutral-500 ml-1">8 items</span>
+        </div>
+      </div>
+
+      <!-- Product Grid -->
+      <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+
+      <!-- Empty Search State -->
+      <div id="product-empty-state" class="hidden py-12 text-center bg-neutral-50 dark:bg-neutral-900 rounded border border-neutral-200 dark:border-neutral-800 my-4">
+        <p class="text-lg font-semibold mb-2">No matching Macrohard products found</p>
+        <p class="text-sm text-neutral-500 mb-4">Try clearing your search query or switching back to All Products.</p>
+        <button type="button" id="reset-search-btn" class="mh-btn-primary text-xs">Reset filters</button>
+      </div>
+    </section>
+
+    <!-- MID-PAGE FULL-WIDTH PROMO BANNER (Xbox Game Pass & Copilot Interactive Showcase) -->
+    <section id="xbox-banner-section" class="mh-container py-10">
+      <div class="relative rounded overflow-hidden bg-[#101814] text-white shadow-lg">
+        <div class="grid grid-cols-1 lg:grid-cols-12 items-center">
+          <div class="lg:col-span-6 p-8 sm:p-12 lg:p-16">
+            <span class="inline-block bg-[#107c10] text-white text-xs font-bold px-2.5 py-1 rounded-sm mb-3 uppercase tracking-wider">
+              Xbox Game Pass Ultimate
+            </span>
+            <h2 class="text-2xl sm:text-4xl font-semibold leading-tight mb-4">
+              Play new day-one releases across console, PC, and cloud
+            </h2>
+            <p class="text-sm sm:text-base text-neutral-300 leading-relaxed mb-6">
+              Discover your next favorite game with friends. Includes online console multiplayer, EA Play membership, and instant cloud streaming on supported devices.
+            </p>
+            <div class="flex flex-wrap items-center gap-4">
+              <button type="button" class="mh-btn-primary !bg-[#107c10] hover:!bg-[#0e6b0e] hero-shop-btn" data-product-id="xbox-game-pass">
+                Join Game Pass Ultimate
+              </button>
+              <button type="button" class="mh-btn-secondary !text-white !border-white/60 hover:!bg-white/10 hero-shop-btn" data-product-id="xbox-series-x">
+                Compare Xbox Consoles
+              </button>
+            </div>
+          </div>
+          <div class="lg:col-span-6 h-full">
+            <img src="./assets/xbox-console.jpg" alt="Xbox Series X and Wireless Controller" class="w-full h-[260px] sm:h-[360px] lg:h-[420px] object-cover" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE MACROHARD COPILOT AI WORKSPACE DEMO -->
+    <section id="copilot-section" class="mh-container py-8">
+      <div class="rounded border border-neutral-200 dark:border-neutral-800 bg-gradient-to-br from-[#f6f9fc] via-white to-[#f0f6ff] dark:from-[#161b22] dark:via-[#121212] dark:to-[#1a1f2c] p-6 sm:p-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-5">
+            <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#0067b8] dark:text-[#4cc2ff] mb-2">
+              <span class="w-2 h-2 rounded-full bg-[#0067b8] animate-pulse"></span>
+              Interactive AI Sandbox
+            </span>
+            <h2 class="text-2xl sm:text-3xl font-semibold mb-3">
+              Experience Macrohard Copilot in action
+            </h2>
+            <p class="text-sm text-[#505050] dark:text-neutral-300 leading-relaxed mb-5">
+              Test how Macrohard Copilot transforms everyday workflows across Word, Excel, PowerPoint, and Azure DevOps. Select a sample enterprise scenario or enter your own prompt.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <button type="button" class="copilot-preset-btn px-3 py-1.5 text-xs font-semibold rounded border border-[#0067b8]/40 bg-white dark:bg-neutral-800 hover:bg-[#0067b8] hover:text-white transition" data-preset="exec">
+                📄 Word Executive Summary
+              </button>
+              <button type="button" class="copilot-preset-btn px-3 py-1.5 text-xs font-semibold rounded border border-[#0067b8]/40 bg-white dark:bg-neutral-800 hover:bg-[#0067b8] hover:text-white transition" data-preset="excel">
+                📊 Excel Margin Forecast
+              </button>
+              <button type="button" class="copilot-preset-btn px-3 py-1.5 text-xs font-semibold rounded border border-[#0067b8]/40 bg-white dark:bg-neutral-800 hover:bg-[#0067b8] hover:text-white transition" data-preset="azure">
+                ⚡ Netlify &amp; Azure Config
+              </button>
+            </div>
+            <form id="copilot-custom-form" class="flex flex-col sm:flex-row gap-2">
+              <input id="copilot-custom-input" type="text" placeholder="Ask Macrohard Copilot anything..." aria-label="Ask Macrohard Copilot" class="flex-1 px-3.5 py-2 text-sm rounded-sm border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 focus:outline-none focus:border-[#0067b8]" />
+              <button type="submit" class="mh-btn-primary text-sm py-2 px-4">Run Copilot</button>
+            </form>
+          </div>
+          <div class="lg:col-span-7">
+            <div id="copilot-response-box" class="min-h-[160px]"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MACROHARD 365 INTERACTIVE PLAN & PRICING SELECTOR -->
+    <section id="m365-section" class="mh-container py-10">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-8">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight">Compare Macrohard 365 Subscription Plans</h2>
+          <p class="text-sm text-[#505050] dark:text-neutral-400 mt-1">
+            Switch between Home and Business tiers or toggle annual billing to save 16%.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3">
+          <!-- Audience Toggle -->
+          <div class="inline-flex rounded border border-neutral-300 dark:border-neutral-700 p-0.5 bg-neutral-100 dark:bg-neutral-800">
+            <button type="button" class="m365-segment-btn px-3.5 py-1.5 text-xs font-semibold rounded-sm bg-[#0067b8] text-white transition" data-segment="personal">
+              For Home &amp; Personal
+            </button>
+            <button type="button" class="m365-segment-btn px-3.5 py-1.5 text-xs font-semibold rounded-sm transition" data-segment="business">
+              For Business
+            </button>
+          </div>
+
+          <!-- Billing Period Toggle -->
+          <div class="inline-flex rounded border border-neutral-300 dark:border-neutral-700 p-0.5 bg-neutral-100 dark:bg-neutral-800">
+            <button type="button" class="m365-billing-btn px-3 py-1.5 text-xs font-semibold rounded-sm bg-[#0067b8] text-white transition" data-billing="annual">
+              Annual (Save 16%)
+            </button>
+            <button type="button" class="m365-billing-btn px-3 py-1.5 text-xs font-semibold rounded-sm transition" data-billing="monthly">
+              Monthly
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="m365-plans-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+    </section>
+
+    <!-- FOR BUSINESS 4-COLUMN SECTION (Authentic Microsoft.com Business Row) -->
+    <section id="business-section" class="mh-container py-10">
+      <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight mb-6">For business</h2>
+      <div id="business-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+    </section>
+
+    <!-- SIDE-BY-SIDE TECHNICAL SPECIFICATION COMPARATOR -->
+    <section id="compare-section" class="mh-container py-10">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+        <div class="flex items-center gap-3">
+          <h2 class="text-xl sm:text-2xl font-semibold">Side-by-Side Hardware &amp; OS Comparator</h2>
+          <span id="compare-count-pill" class="px-2.5 py-0.5 text-xs font-bold bg-[#0067b8]/10 text-[#0067b8] dark:text-[#4cc2ff] rounded-full">2 selected</span>
+        </div>
+        <button type="button" id="clear-compare-btn" class="text-xs font-semibold text-[#0067b8] dark:text-[#4cc2ff] hover:underline self-start sm:self-auto">
+          Clear comparison list
+        </button>
+      </div>
+      <div class="overflow-x-auto rounded border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-[#1a1a1a]">
+        <table class="w-full border-collapse min-w-[640px]">
+          <tbody id="comparison-table-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- DEVELOPER CREDIT HIGHLIGHT BANNER (Tamojit Roy) & SOCIAL STRIP -->
+    <section class="mh-container py-8 border-t border-neutral-200 dark:border-neutral-800">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div class="flex flex-wrap items-center gap-4">
+          <span class="text-sm text-[#505050] dark:text-neutral-300">Follow Macrohard</span>
+          <a href="#footer-section" class="p-2 rounded hover:bg-neutral-100 dark:hover:bg-neutral-800" aria-label="Macrohard on X">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#footer-section" class="p-2 rounded hover:bg-neutral-100 dark:hover:bg-neutral-800" aria-label="Macrohard on LinkedIn">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+          </a>
+          <a href="#footer-section" class="p-2 rounded hover:bg-neutral-100 dark:hover:bg-neutral-800" aria-label="Macrohard on YouTube">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3">
+          <button type="button" id="open-dev-credit-btn" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-sm bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-xs font-semibold">
+            <span class="w-2 h-2 rounded-full bg-[#7fba00]"></span>
+            <span>Lead Developer Credit: <strong>Tamojit Roy</strong></span>
+          </button>
+
+          <a href="#top" class="inline-flex items-center gap-2 px-4 py-2 rounded-sm bg-[#e6e6e6] dark:bg-neutral-800 hover:bg-[#d5d5d5] dark:hover:bg-neutral-700 text-xs font-semibold">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+            <span>Back to top</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- AUTHENTIC MICROSOFT 6-COLUMN FAT FOOTER -->
+  <footer id="footer-section" class="bg-[#f2f2f2] dark:bg-[#181818] text-[#616161] dark:text-neutral-400 text-xs border-t border-neutral-200 dark:border-neutral-800 mt-6">
+    <div class="mh-container py-10">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+        <div>
+          <h3 class="font-semibold text-[15px] text-[#262626] dark:text-white mb-3">What's new</h3>
+          <ul class="space-y-2.5">
+            <li><a href="#storefront-section" class="hover:underline">Surface Pro (11th Edition)</a></li>
+            <li><a href="#storefront-section" class="hover:underline">Surface Laptop (7th Edition)</a></li>
+            <li><a href="#copilot-section" class="hover:underline">Macrohard Copilot</a></li>
+            <li><a href="#m365-section" class="hover:underline">Macrohard 365</a></li>
+            <li><a href="#storefront-section" class="hover:underline">Windows 11 apps</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-[15px] text-[#262626] dark:text-white mb-3">Macrohard Store</h3>
+          <ul class="space-y-2.5">
+            <li><a href="#top" class="hover:underline">Account profile</a></li>
+            <li><a href="#storefront-section" class="hover:underline">Download Center</a></li>
+            <li><a href="#compare-section" class="hover:underline">Macrohard Store support</a></li>
+            <li><a href="#storefront-section" class="hover:underline">Returns &amp; price protection</a></li>
+            <li><a href="#top" class="hover:underline">Order tracking</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-[15px] text-[#262626] dark:text-white mb-3">Education</h3>
+          <ul class="space-y-2.5">
+            <li><a href="#m365-section" class="hover:underline">Macrohard in education</a></li>
+            <li><a href="#storefront-section" class="hover:underline">Devices for education</a></li>
+            <li><a href="#copilot-section" class="hover:underline">Macrohard Teams for Education</a></li>
+            <li><a href="#m365-section" class="hover:underline">Macrohard 365 Education</a></li>
+            <li><a href="#storefront-section" class="hover:underline">Educator training and development</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-[15px] text-[#262626] dark:text-white mb-3">Business</h3>
+          <ul class="space-y-2.5">
+            <li><a href="#business-section" class="hover:underline">Macrohard Cloud</a></li>
+            <li><a href="#business-section" class="hover:underline">Macrohard Security</a></li>
+            <li><a href="#business-section" class="hover:underline">Azure</a></li>
+            <li><a href="#business-section" class="hover:underline">Dynamics 365</a></li>
+            <li><a href="#m365-section" class="hover:underline">Macrohard 365 for business</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-[15px] text-[#262626] dark:text-white mb-3">Developer &amp; IT</h3>
+          <ul class="space-y-2.5">
+            <li><a href="#business-section" class="hover:underline">Macrohard Developer</a></li>
+            <li><a href="#copilot-section" class="hover:underline">Documentation</a></li>
+            <li><a href="#copilot-section" class="hover:underline">Macrohard Learn</a></li>
+            <li><a href="#business-section" class="hover:underline">Netlify Static Edge Bundle</a></li>
+            <li><a href="#compare-section" class="hover:underline">AppSource &amp; Marketplace</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-[15px] text-[#262626] dark:text-white mb-3">Company</h3>
+          <ul class="space-y-2.5">
+            <li><a href="#top" class="hover:underline">Careers</a></li>
+            <li><a href="#top" class="hover:underline">About Macrohard</a></li>
+            <li><button type="button" id="footer-dev-credit-btn" class="hover:underline text-left font-semibold text-[#0067b8] dark:text-[#4cc2ff]">Developer: Tamojit Roy</button></li>
+            <li><a href="#top" class="hover:underline">Privacy at Macrohard</a></li>
+            <li><a href="#top" class="hover:underline">Sustainability</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Utility & Legal Bar -->
+      <div class="mt-10 pt-6 border-t border-neutral-300 dark:border-neutral-800 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
+        <div class="flex flex-wrap items-center gap-5">
+          <button type="button" id="locale-selector-btn" class="inline-flex items-center gap-2 hover:underline text-[#262626] dark:text-neutral-300">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+            <span id="current-locale-label">English (United States)</span>
+          </button>
+
+          <button type="button" id="privacy-choices-btn" class="inline-flex items-center gap-1.5 hover:underline text-[#262626] dark:text-neutral-300">
+            <span class="inline-flex items-center px-1.5 py-0.5 rounded-full bg-[#0067b8] text-white text-[9px] font-bold">✓×</span>
+            <span>Your Privacy Choices</span>
+          </button>
+
+          <a href="#footer-section" class="hover:underline">Consumer Health Privacy</a>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-x-5 gap-y-2">
+          <a href="#footer-section" class="hover:underline">Contact Macrohard</a>
+          <a href="#footer-section" class="hover:underline">Privacy</a>
+          <a href="#footer-section" class="hover:underline">Terms of use</a>
+          <a href="#footer-section" class="hover:underline">Trademarks</a>
+          <a href="#footer-section" class="hover:underline">Safety &amp; eco</a>
+          <span class="font-semibold text-[#262626] dark:text-white">
+            Developed by Tamojit Roy &bull; &copy; Macrohard 2026
+          </span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL 1: SHOPPING CART DRAWER -->
+  <div id="cart-drawer-modal" class="hidden fixed inset-0 z-50 bg-black/50 backdrop-blur-xs flex justify-end" role="dialog" aria-modal="true" aria-label="Shopping Cart">
+    <div class="bg-white dark:bg-[#1b1b1b] w-full max-w-md h-full flex flex-col justify-between p-6 shadow-2xl overflow-y-auto">
+      <div>
+        <div class="flex items-center justify-between pb-4 border-b border-neutral-200 dark:border-neutral-700">
+          <h3 class="text-lg font-bold">Macrohard Store Cart</h3>
+          <button type="button" id="close-cart-btn" class="p-1.5 rounded hover:bg-neutral-100 dark:hover:bg-neutral-800 text-lg font-bold" aria-label="Close cart">&times;</button>
+        </div>
+        <div id="cart-items-list" class="divide-y divide-neutral-200 dark:divide-neutral-700"></div>
+      </div>
+
+      <div class="pt-4 border-t border-neutral-200 dark:border-neutral-700 space-y-3">
+        <div class="flex gap-2">
+          <input id="promo-code-input" type="text" placeholder="Promo code (try TAMOJIT20)" aria-label="Promo code" class="flex-1 px-3 py-1.5 text-xs rounded border border-neutral-300 dark:border-neutral-700 bg-transparent" />
+          <button type="button" id="apply-promo-btn" class="mh-btn-secondary text-xs py-1.5 px-3">Apply</button>
+        </div>
+        <div class="text-xs space-y-1 text-neutral-600 dark:text-neutral-300">
+          <div class="flex justify-between"><span>Subtotal</span><span id="cart-subtotal">$999.99</span></div>
+          <div class="flex justify-between text-[#107c10]"><span>Promo Discount</span><span id="cart-discount">-$0.00</span></div>
+          <div class="flex justify-between text-base font-bold text-[#1b1b1b] dark:text-white pt-1 border-t border-neutral-200 dark:border-neutral-700">
+            <span>Estimated Total</span><span id="cart-total">$999.99</span>
+          </div>
+        </div>
+        <button type="button" id="checkout-action-btn" class="mh-btn-primary w-full">Complete Instant Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 2: PRODUCT DETAIL / CONFIGURATOR -->
+  <div id="product-detail-modal" class="hidden fixed inset-0 z-50 bg-black/50 backdrop-blur-xs flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-label="Product Specifications">
+    <div class="bg-white dark:bg-[#1b1b1b] rounded max-w-3xl w-full p-6 sm:p-8 shadow-2xl max-h-[90vh] overflow-y-auto">
+      <div class="flex justify-end mb-2">
+        <button type="button" id="close-product-modal-btn" class="p-1.5 rounded hover:bg-neutral-100 dark:hover:bg-neutral-800 text-xl font-bold leading-none" aria-label="Close specifications modal">&times;</button>
+      </div>
+      <div id="product-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- MODAL 3: AUTHENTIC MICROSOFT SIGN-IN -->
+  <div id="signin-modal" class="hidden fixed inset-0 z-50 bg-black/50 backdrop-blur-xs flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-label="Sign in to Macrohard">
+    <div class="bg-white dark:bg-[#1f1f1f] rounded-sm max-w-md w-full p-8 sm:p-10 shadow-2xl border border-neutral-200 dark:border-neutral-700">
+      <div class="flex items-center justify-between mb-6">
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5" viewBox="0 0 21 21"><rect x="0" y="0" width="10" height="10" fill="#F25022"/><rect x="11" y="0" width="10" height="10" fill="#7FBA00"/><rect x="0" y="11" width="10" height="10" fill="#00A4EF"/><rect x="11" y="11" width="10" height="10" fill="#FFB900"/></svg>
+          <span class="font-semibold text-lg">Macrohard</span>
+        </div>
+        <button type="button" id="close-signin-btn" class="text-neutral-500 hover:text-neutral-800 dark:hover:text-white text-xl font-bold" aria-label="Close sign in">&times;</button>
+      </div>
+      <h3 class="text-2xl font-semibold mb-2">Sign in</h3>
+      <p class="text-xs text-neutral-500 dark:text-neutral-400 mb-5">Continue to Macrohard 365, Azure &amp; Xbox Live</p>
+      <form id="signin-form" class="space-y-4">
+        <div>
+          <input id="signin-email-input" type="email" required placeholder="Email, phone, or Skype" aria-label="Email, phone, or Skype" value="tamojit.roy@macrohard.com" class="w-full border-b border-neutral-400 dark:border-neutral-600 focus:border-[#0067b8] bg-transparent py-2 text-sm focus:outline-none" />
+        </div>
+        <div class="text-xs space-y-2">
+          <p>No account? <a href="#m365-section" class="text-[#0067b8] hover:underline">Create one!</a></p>
+        </div>
+        <div class="flex justify-end pt-4">
+          <button type="submit" class="mh-btn-primary px-8 py-2 text-sm">Next</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL 4: DEVELOPER CREDIT (TAMOJIT ROY) -->
+  <div id="dev-credit-modal" class="hidden fixed inset-0 z-50 bg-black/50 backdrop-blur-xs flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-label="Developer Credit">
+    <div class="bg-white dark:bg-[#1f1f1f] rounded max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-neutral-200 dark:border-neutral-700">
+      <div class="flex items-center justify-between pb-4 border-b border-neutral-200 dark:border-neutral-700 mb-4">
+        <div class="flex items-center gap-2.5">
+          <svg class="w-6 h-6" viewBox="0 0 21 21"><rect x="0" y="0" width="10" height="10" fill="#F25022"/><rect x="11" y="0" width="10" height="10" fill="#7FBA00"/><rect x="0" y="11" width="10" height="10" fill="#00A4EF"/><rect x="11" y="11" width="10" height="10" fill="#FFB900"/></svg>
+          <h3 class="text-lg font-bold">Macrohard Platform Architecture</h3>
+        </div>
+        <button type="button" id="close-dev-modal-btn" class="text-xl font-bold px-2" aria-label="Close developer credit">&times;</button>
+      </div>
+      <div class="space-y-3 text-sm leading-relaxed text-[#505050] dark:text-neutral-300">
+        <p><strong>Designed &amp; Engineered by:</strong> <span class="text-[#0067b8] dark:text-[#4cc2ff] font-bold">Tamojit Roy</span></p>
+        <p>Built with the Fluent Web Design System for zero-breakage responsiveness across 320px mobile viewports, tablets, laptops, and 4K ultra-wide displays, pre-configured for one-click Netlify hosting.</p>
+        <div class="p-3 rounded bg-neutral-100 dark:bg-neutral-800 text-xs space-y-1">
+          <div><strong>Deployment Target:</strong> Netlify Static Edge (`netlify.toml` + `_redirects` included)</div>
+          <div><strong>Exclusive Promo Code:</strong> Use <code class="font-mono font-bold text-[#0067b8]">TAMOJIT20</code> in the cart for 20% off</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 5: LOCALE / LANGUAGE SELECTOR -->
+  <div id="locale-modal" class="hidden fixed inset-0 z-50 bg-black/50 backdrop-blur-xs flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-label="Choose your language and region">
+    <div class="bg-white dark:bg-[#1f1f1f] rounded max-w-md w-full p-6 shadow-2xl">
+      <div class="flex items-center justify-between pb-3 border-b border-neutral-200 dark:border-neutral-700 mb-4">
+        <h3 class="text-base font-bold">Select Region &amp; Language</h3>
+        <button type="button" id="close-locale-btn" class="text-xl font-bold px-2" aria-label="Close locale selector">&times;</button>
+      </div>
+      <div class="grid grid-cols-1 gap-2 text-sm">
+        <button type="button" class="locale-option-btn text-left px-3 py-2 rounded hover:bg-neutral-100 dark:hover:bg-neutral-800 font-medium" data-locale="English (United States)">🇺🇸 English (United States)</button>
+        <button type="button" class="locale-option-btn text-left px-3 py-2 rounded hover:bg-neutral-100 dark:hover:bg-neutral-800 font-medium" data-locale="English (India)">🇮🇳 English (India)</button>
+        <button type="button" class="locale-option-btn text-left px-3 py-2 rounded hover:bg-neutral-100 dark:hover:bg-neutral-800 font-medium" data-locale="English (United Kingdom)">🇬🇧 English (United Kingdom)</button>
+        <button type="button" class="locale-option-btn text-left px-3 py-2 rounded hover:bg-neutral-100 dark:hover:bg-neutral-800 font-medium" data-locale="Deutsch (Deutschland)">🇩🇪 Deutsch (Deutschland)</button>
+        <button type="button" class="locale-option-btn text-left px-3 py-2 rounded hover:bg-neutral-100 dark:hover:bg-neutral-800 font-medium" data-locale="日本語 (日本)">🇯🇵 日本語 (日本)</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/app.js"></script>
+</body>
+</html>
